@@ -6,18 +6,18 @@ import java.time.LocalDate;
 
 @Getter
 public class Student {
-    private Integer id;
-    private String firstname;
-    private LocalDate date;
-    private String email;
-    private String phoneNumber;
-    private String group;
-    private Tutor tutor;
+    private final Integer id;
+    private final String firstname;
+    private final LocalDate BirthDate;
+    private final String email;
+    private final String phoneNumber;
+    private final String group;
+    private final Tutor tutor;
 
-    public Student(Integer id, String firstname, LocalDate date, String email, String phoneNumber, String group, Tutor tutor) {
+    public Student(Integer id, String firstname, LocalDate birthDate, String email, String phoneNumber, String group, Tutor tutor) {
         this.id = id;
         this.firstname = firstname;
-        this.date = date;
+        this.BirthDate = birthDate;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.group = group;
