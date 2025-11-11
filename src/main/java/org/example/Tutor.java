@@ -4,12 +4,12 @@ import lombok.Getter;
 
 @Getter
 public class Tutor {
-    private Integer id;
-    private String lastname;
-    private String firstname;
-    private String email;
-    private String phoneNumber;
-    private String description;
+    private final Integer id;
+    private final String lastname;
+    private final String firstname;
+    private final String email;
+    private final String phoneNumber;
+    private final String description;
 
     public Tutor(Integer id, String lastname, String firstname, String email, String phoneNumber, String description) {
         this.id = id;

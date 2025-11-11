@@ -7,11 +7,11 @@ import java.util.List;
 @Getter
 public class Exams {
     private final int id;
-    String title;
-    Subject subject;
-    Instant date;
-    int coefficient;
-    List<Note> notes;
+    private final String title;
+    private final Subject subject;
+    private final Instant date;
+    private final int coefficient;
+    private List<Note> notes;
 
     public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
         this.id = id;
