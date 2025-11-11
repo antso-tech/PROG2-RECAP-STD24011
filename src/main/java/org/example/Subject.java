@@ -1,19 +1,21 @@
 package org.example;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+
 
 @Getter
 public class Subject {
     private Integer id;
-    private String label;
+    private Label label;
     private Integer credit;
-    private Teacher teacher;
+    private Student teacher;
 
-    public Subject(Integer id, String label, Integer credit, Teacher teacher) {
+    public Subject(Integer id, Label label, Integer credit, Student teacher) {
         this.id = id;
         this.label = label;
         this.credit = credit;
         this.teacher = teacher;
     }
+
+
 }
