@@ -15,9 +15,9 @@ public class Student {
     private final String phoneNumber;
     private final String group;
     private final Tutor tutor;
-    private List<Note> note;
+    private final Exams exams;
 
-    public Student(Integer id,String lastName, String firstname, LocalDate birthDate, String email, String phoneNumber, String group, Tutor tutor) {
+    public Student(Integer id, String lastName, String firstname, LocalDate birthDate, String email, String phoneNumber, String group, Tutor tutor, Exams exams) {
         this.id = id;
         this.lastName = lastName;
         this.firstname = firstname;
@@ -26,9 +26,12 @@ public class Student {
         this.phoneNumber = phoneNumber;
         this.group = group;
         this.tutor = tutor;
+        this.exams = exams;
     }
 
     public Integer finalNote (){
-        return note.stream().
+        if(getExams().getNotes().getHistory().isEmpty()){
+            return getExams().getNotes().getInitialValue();
+        }
     }
 }
