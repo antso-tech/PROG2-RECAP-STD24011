@@ -5,6 +5,7 @@ import lombok.Getter;
 import java.time.Instant;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 @Getter
 public class Note {
@@ -31,6 +32,18 @@ public class Note {
                 ", exams=" + exams +
                 ", history=" + history +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Note note = (Note) o;
+        return Objects.equals(initialValue, note.initialValue) && Objects.equals(subject, note.subject) && Objects.equals(student, note.student) && Objects.equals(exams, note.exams) && Objects.equals(history, note.history);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(initialValue, subject, student, exams, history);
     }
 
     public void changeNote (History newNote){

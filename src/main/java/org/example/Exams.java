@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.Getter;
 import java.time.Instant;
+import java.util.Objects;
 import java.util.Optional;
 
 @Getter
@@ -31,5 +32,17 @@ public class Exams {
                 ", coefficient=" + coefficient +
                 ", notes=" + notes +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Exams exams = (Exams) o;
+        return id == exams.id && coefficient == exams.coefficient && Objects.equals(title, exams.title) && Objects.equals(subject, exams.subject) && Objects.equals(date, exams.date) && Objects.equals(notes, exams.notes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, subject, date, coefficient, notes);
     }
 }

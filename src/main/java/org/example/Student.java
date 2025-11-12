@@ -3,6 +3,7 @@ package org.example;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Getter
 public class Student extends People{
@@ -21,5 +22,18 @@ public class Student extends People{
                 "group='" + group + '\'' +
                 ", tutor=" + tutor +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Student student = (Student) o;
+        return Objects.equals(group, student.group) && Objects.equals(tutor, student.tutor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), group, tutor);
     }
 }

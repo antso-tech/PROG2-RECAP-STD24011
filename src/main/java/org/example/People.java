@@ -3,6 +3,7 @@ package org.example;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Getter
 public class People {
@@ -30,5 +31,17 @@ public class People {
                 ", birthdate=" + birthdate +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        People people = (People) o;
+        return id == people.id && Objects.equals(firstName, people.firstName) && Objects.equals(lastName, people.lastName) && Objects.equals(birthdate, people.birthdate) && Objects.equals(email, people.email) && Objects.equals(phoneNumber, people.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, birthdate, email, phoneNumber);
     }
 }
