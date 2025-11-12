@@ -21,4 +21,14 @@ public class People {
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return ", id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthdate=" + birthdate +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'';
+    }
 }

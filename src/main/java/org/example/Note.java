@@ -22,16 +22,21 @@ public class Note {
         this.exams = exams;
     }
 
-    public boolean changeNote (History newNote){
-        return history.add(newNote);
-
+    @Override
+    public String toString() {
+        return "Note{" +
+                "initialValue=" + initialValue +
+                ", subject=" + subject +
+                ", student=" + student +
+                ", exams=" + exams +
+                ", history=" + history +
+                '}';
     }
 
+    public void changeNote (History newNote){
+        history.add(newNote);
 
-
-
-
-
+    }
 
 
 }

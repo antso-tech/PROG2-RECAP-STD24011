@@ -21,8 +21,15 @@ public class Exams {
         this.coefficient = coefficient;
     }
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "Exams{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", subject=" + subject +
+                ", date=" + date +
+                ", coefficient=" + coefficient +
+                ", notes=" + notes +
+                '}';
+    }
 }

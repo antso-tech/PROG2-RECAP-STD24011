@@ -15,4 +15,11 @@ public class Student extends People{
         this.tutor = tutor;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" + super.toString() +
+                "group='" + group + '\'' +
+                ", tutor=" + tutor +
+                '}';
+    }
 }

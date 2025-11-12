@@ -12,4 +12,11 @@ public class Tutor extends People{
         super(id, firstName, lastName, birthdate, email, phoneNumber);
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Tutor{" + super.toString() +
+                "description='" + description + '\'' +
+                '}';
+    }
 }

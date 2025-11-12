@@ -1,8 +1,10 @@
 package org.example;
 
 import lombok.Getter;
+import lombok.ToString;
 
 import java.time.Instant;
+
 
 @Getter
 public class History {
@@ -14,5 +16,14 @@ public class History {
         this.note = note;
         this.time = time;
         this.reason = reason;
+    }
+
+    @Override
+    public String toString() {
+        return "History{" +
+                "note=" + note +
+                ", time=" + time +
+                ", reason='" + reason + '\'' +
+                '}';
     }
 }
