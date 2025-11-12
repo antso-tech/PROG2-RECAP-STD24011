@@ -10,13 +10,13 @@ import java.util.List;
 
 @Getter
 public class Note {
-    private final Integer initialValue;
+    private final Double initialValue;
     private final Subject subject;
     private final Student student;
     private final Exams exams;
     private final List<History> history;
 
-    public Note(Integer initialValue, Subject subject, Student student, Exams exams) {
+    public Note(Double initialValue, Subject subject, Student student, Exams exams) {
         this.initialValue = initialValue;
         this.subject = subject;
         this.student = student;

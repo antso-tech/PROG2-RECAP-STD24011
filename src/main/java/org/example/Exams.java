@@ -3,7 +3,6 @@ package org.example;
 import lombok.Getter;
 import java.time.Instant;
 import java.util.Objects;
-import java.util.Optional;
 
 @Getter
 public class Exams {
@@ -12,7 +11,7 @@ public class Exams {
     private final Subject subject;
     private final Instant date;
     private final int coefficient;
-    private Note notes;
+    private FinalNoteCalculator finalNote;
 
     public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
         this.id = id;
