@@ -20,7 +20,7 @@ public class Note {
         this.history = Collections.singletonList(new History(initialValue, Instant.now(), ""));
     }
 
-    public boolean addNewNote (History newNote){
+    public boolean changeNote (History newNote){
         return history.add(newNote);
 
     }
