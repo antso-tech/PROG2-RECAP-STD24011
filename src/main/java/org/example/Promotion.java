@@ -1,15 +1,16 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Promotion {
-    private List<String> Groupe;
+    private List<String> groupes;
 
-    public Promotion(List<String> groupe) {
-        Groupe = groupe;
+    public Promotion() {
+        groupes = Arrays.asList();
     }
 
-    public List<String> addGroup(String group){
-        return group
+    public boolean addGroup(String group){
+        return groupes.add(group);
     }
 }
