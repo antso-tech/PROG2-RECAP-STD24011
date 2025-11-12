@@ -27,9 +27,9 @@ public class Main {
                 ,"14 69 17 05 89","F3",Gabriel);
         Subject PROG1 = new Subject(1,Label.PROG1,8,James);
         Subject WEB1 = new Subject(2,Label.WEB1,6,Danielle);
-        History history1 = new History(13, Instant.parse("2025-11-12T08:37:00Z")
+        History history1 = new History(13, Instant.now()
                 ,"Pénalité aprés avoir non fini un devoir ");
-        History history2 = new History(15,Instant.parse("2025-11-16T06:16:00Z")
+        History history2 = new History(15,Instant.now()
                 ,"bonus pour bonne conduite");
         Exams firstExamPROG1 = new Exams(1,"Premier Examen PROG1",
                 PROG1,Instant.parse("2025-10-30T08:00:00Z"),3);
@@ -43,8 +43,10 @@ public class Main {
         Note firstTestNoteProg1 = new Note(14, PROG1, Jean, testProg1);
         Note firstExamNoteWeb1 = new Note(17, WEB1, Emily,firstExamWeb1);
         Note finalExamNoteProg1 = new Note(13, PROG1, Emily,finalExamProg1);
-       finalExamNoteProg1.changeNote(history1);
-        finalExamNoteProg1.getHistory();
+        finalExamNoteProg1.changeNote(history1);
+        System.out.println(finalExamNoteProg1.getHistory());
+        finalExamNoteProg1.changeNote(history2);
+        System.out.println(finalExamNoteProg1.getHistory());
 
 
 
