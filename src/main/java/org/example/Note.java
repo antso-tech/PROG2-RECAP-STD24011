@@ -3,26 +3,25 @@ package org.example;
 import lombok.Getter;
 
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Getter
 public class Note {
     private final Integer initialValue;
-    private final List<History> history;
     private final Subject subject;
     private final Student student;
+    private List<History> history;
 
-    public Note(Integer initialValue, List<History> History, List<History> history, Subject subject, Student student) {
+    public Note(Integer initialValue, Subject subject, Student student, List<History> history) {
         this.initialValue = initialValue;
-        this.history = Collections.singletonList(new History(initialValue, Instant.now(), ""));
         this.subject = subject;
         this.student = student;
+        this.history = Collections.singletonList(new History(initialValue, Instant.now(), ""));
     }
 
-    public boolean addNewNote (){
-        return history.add(history);
+    public boolean addNewNote (History newNote){
+        return history.add(newNote);
 
     }
 
