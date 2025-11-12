@@ -1,6 +1,5 @@
 package org.example;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.util.List;
@@ -8,10 +7,17 @@ import java.util.List;
 @Getter
 public class Note {
     private final Integer initialValue;
-    private List<Integer> changeHistory;
+    private final List<History> History;
+    private final Student student;
+    private final Subject subject;
 
-    public Note(Integer initialValue, List<Integer> changeHistory) {
+
+    public Note(Integer initialValue, List<History> History, Student student, Subject subject ) {
         this.initialValue = initialValue;
-        this.changeHistory = changeHistory;
+        this.History = History;
+        this.student = student;
+        this.subject = subject
     }
+
+
 }

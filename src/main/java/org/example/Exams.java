@@ -2,7 +2,7 @@ package org.example;
 
 import lombok.Getter;
 import java.time.Instant;
-import java.util.List;
+import java.util.Optional;
 
 @Getter
 public class Exams {
@@ -11,19 +11,18 @@ public class Exams {
     private final Subject subject;
     private final Instant date;
     private final int coefficient;
-    private List<Note> notes;
+    private Note notes;
 
-    public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
+    public Exams(int id, String title, Subject subject, Instant date, int coefficient, Note notes) {
         this.id = id;
         this.title = title;
         this.subject = subject;
         this.date = date;
         this.coefficient = coefficient;
+        this.notes = notes;
     }
 
-    public List<Integer> finalNote(){
-        return notes.stream().map(Note::getInitialValue).toList();
-    }
+
 
 
 

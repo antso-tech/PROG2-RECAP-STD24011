@@ -21,6 +21,8 @@ public class Teacher {
         this.birthdate = birthdate;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        Speciality = speciality;
+        this.Speciality = speciality;
     }
+
+
 }
