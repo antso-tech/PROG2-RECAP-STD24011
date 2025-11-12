@@ -29,6 +29,6 @@ public class Student {
     }
 
     public Integer finalNote (){
-        return note.stream()
+        return note.stream().
     }
 }

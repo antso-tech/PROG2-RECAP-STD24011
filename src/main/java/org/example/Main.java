@@ -18,8 +18,13 @@ public class Main {
         Subject WEB1 = new Subject(2,Label.WEB1,6,Danielle);
         History history1 = new History(13, Instant.parse("2025-11-12T08:37:00Z"),"Pénalité aprés avoir non fini un devoir ");
         History history2 = new History(15,Instant.parse("2025-11-16T06:16:00Z"),"bonus pour bonne conduite");
-        Note firstExamNote = new Note(16, List.of(history1,history2),Emily,PROG1);
-        Note Test = new Note(14, List.of(),Emily,PROG1);
+        Exams firstExamPROG1 = new Exams(1,"Premier Examen", PROG1,Instant.parse("2025-10-30T08:00:00Z"),3);
+        Exams testProg1 = new Exams(2,"Test prog1", PROG1,Instant.parse("2025-10-30T08:00:00Z"),3);
+        Exams firstExamPROG1 = new Exams(3,"Premier Examen", PROG1,Instant.parse("2025-10-30T08:00:00Z"),3);
+        Note firstExamNotePROG1 = new Note(16, List.of(history1,history2),Emily,PROG1);
+        Note firstTestProg1 = new Note(14, List.of(),Emily,PROG1);
+        Note firstExamWeb1 = new Note(17,List.of(),Emily,WEB1);
+        Note finalExamProg1 = new Note(13,List.of(),Emily,PROG1);
 
 
     }
