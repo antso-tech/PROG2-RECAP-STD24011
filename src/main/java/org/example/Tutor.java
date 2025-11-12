@@ -2,23 +2,15 @@ package org.example;
 
 import lombok.Getter;
 
+import java.time.LocalDate;
+
 @Getter
-public class Tutor {
-    private final Integer id;
-    private final String lastname;
-    private final String firstname;
-    private final String email;
-    private final String phoneNumber;
+public class Tutor extends People{
     private final String description;
 
-    public Tutor(Integer id, String lastname, String firstname, String email, String phoneNumber, String description) {
-        this.id = id;
-        this.lastname = lastname;
-        this.firstname = firstname;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+
+    public Tutor(int id, String firstName, String lastName, LocalDate birthdate, String email, String phoneNumber, String description) {
+        super(id, firstName, lastName, birthdate, email, phoneNumber);
         this.description = description;
     }
-
-
 }
