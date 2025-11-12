@@ -13,13 +13,12 @@ public class Exams {
     private final int coefficient;
     private Note notes;
 
-    public Exams(int id, String title, Subject subject, Instant date, int coefficient, Note notes) {
+    public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
         this.id = id;
         this.title = title;
         this.subject = subject;
         this.date = date;
         this.coefficient = coefficient;
-        this.notes = notes;
     }
 
 

@@ -3,6 +3,7 @@ package org.example;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 public class Student {
@@ -13,6 +14,7 @@ public class Student {
     private final String phoneNumber;
     private final String group;
     private final Tutor tutor;
+    private List<Note> note;
 
     public Student(Integer id, String firstname, LocalDate birthDate, String email, String phoneNumber, String group, Tutor tutor) {
         this.id = id;
@@ -22,5 +24,9 @@ public class Student {
         this.phoneNumber = phoneNumber;
         this.group = group;
         this.tutor = tutor;
+    }
+
+    public Integer finalNote (){
+        return note.stream()
     }
 }
