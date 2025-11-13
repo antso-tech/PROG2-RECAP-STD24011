@@ -47,10 +47,8 @@ public class Main {
         System.out.println(finalExamNoteProg1.getHistory());
         finalExamNoteProg1.changeNote(history2);
         System.out.println(finalExamNoteProg1.getHistory());
-
-
-
-
+        CalculateNotes progFinalNotes = new CalculateNotes();
+        System.out.println(progFinalNotes.finalNoteCalculator(List.of(firstExamNotePROG1,firstTestNoteProg1,finalExamNoteProg1)));
 
     }
 }

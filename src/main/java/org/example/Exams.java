@@ -46,7 +46,4 @@ public class Exams {
         return Objects.hash(id, title, subject, date, coefficient, notes);
     }
 
-    public void finalNoteCalculator(){
-        return notes.stream();
-    };
 }
