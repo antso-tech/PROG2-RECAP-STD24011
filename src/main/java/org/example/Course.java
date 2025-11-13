@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.List;
 
-public class CalculateNotes {
+public class Course {
     public Double finalNoteCalculator(List<Note> notes){
         return notes
                 .stream()

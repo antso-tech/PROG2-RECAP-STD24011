@@ -27,16 +27,16 @@ public class Main {
                 ,"14 69 17 05 89","F3",Gabriel);
         Subject PROG1 = new Subject(1,Label.PROG1,8,James);
         Subject WEB1 = new Subject(2,Label.WEB1,6,Danielle);
-        History history1 = new History(13.00, Instant.now()
+        History history1 = new History(13.00, Instant.parse("2025-11-14T02:45:19Z")
                 ,"Pénalité aprés avoir non fini un devoir ");
-        History history2 = new History(15.00,Instant.now()
+        History history2 = new History(15.00,Instant.parse("2025-11-15T17:40:19Z")
                 ,"bonus pour bonne conduite");
         Exams firstExamPROG1 = new Exams(1,"Premier Examen PROG1",
                 PROG1,Instant.parse("2025-10-30T08:00:00Z"),3);
         Exams testProg1 = new Exams(2,"Test prog1", PROG1
-                ,Instant.parse("2025-10-30T08:00:00Z"),3);
+                ,Instant.parse("2025-10-30T08:00:00Z"),2);
         Exams finalExamProg1 = new Exams(3,"Examen final PROG1", PROG1
-                ,Instant.parse("2025-10-30T08:00:00Z"),3);
+                ,Instant.parse("2025-10-30T08:00:00Z"),2);
         Exams firstExamWeb1 = new Exams(4, "Premier examen WEB1", WEB1
                 ,Instant.parse("2025-10-30T08:00:00Z"), 2);
         Note firstExamNotePROG1 = new Note(16.00, PROG1, Emily,finalExamProg1);
@@ -47,7 +47,7 @@ public class Main {
         System.out.println(finalExamNoteProg1.getHistory());
         finalExamNoteProg1.changeNote(history2);
         System.out.println(finalExamNoteProg1.getHistory());
-        CalculateNotes progFinalNotes = new CalculateNotes();
+        Course progFinalNotes = new Course();
         System.out.println(progFinalNotes.finalNoteCalculator(List.of(firstExamNotePROG1,firstTestNoteProg1,finalExamNoteProg1)));
 
     }
