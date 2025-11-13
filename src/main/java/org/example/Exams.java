@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.Getter;
 import java.time.Instant;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -11,7 +12,7 @@ public class Exams {
     private final Subject subject;
     private final Instant date;
     private final int coefficient;
-    private FinalNoteCalculator finalNote;
+    private List<Note> notes;
 
     public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
         this.id = id;
@@ -44,4 +45,8 @@ public class Exams {
     public int hashCode() {
         return Objects.hash(id, title, subject, date, coefficient, notes);
     }
+
+    public void finalNoteCalculator(){
+        return notes.stream();
+    };
 }
