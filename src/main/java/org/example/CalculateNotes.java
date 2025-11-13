@@ -1,16 +1,25 @@
 package org.example;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
 
 public class CalculateNotes {
-    public List<Optional<Double>> finalNoteCalculator(List<Note> notes){
+    public List<Double> finalNoteCalculator(List<Note> notes){
 
-        return notes
+        return Collections.singletonList(notes
                 .stream()
-                .map(e -> e.getHistory()
+                .flatMapToDouble(n -> n
+                        .getHistory()
                         .stream()
-                        .map(History::getNote)
-                        .reduce((first,last) -> last)).toList();
+                        .reduce((a, b) -> b)
+                        .stream()
+                        .mapToDouble(e -> e
+                                .getNote() * n.getExams()
+                                .getCoefficient()))
+                .boxed()
+                .reduce(0.0, Double::sum));
     }
 }
