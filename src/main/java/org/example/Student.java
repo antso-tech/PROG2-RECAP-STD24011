@@ -6,6 +6,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 @Getter
 public class Student extends People{
@@ -40,5 +41,14 @@ public class Student extends People{
         return Objects.hash(super.hashCode(), group, tutor);
     }
 
-
+     public Stream<Note> getExamGrade(Exams exam, Instant t){
+        return notes
+                .stream()
+                .filter(e -> e
+                        .getExams()
+                        .equals(exam))
+                .map(time -> time
+                        .getHistory().stream().filter(e -> e.getTime().isBefore(t)))
+                .mapToDouble(n -> );
+     }
 }

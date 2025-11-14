@@ -12,8 +12,7 @@ public class Exams {
     private final Subject subject;
     private final Instant date;
     private final int coefficient;
-    private List<Note> notes;
-    private CalculatorFinalNote finalNote;
+
 
     public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
         this.id = id;
@@ -31,7 +30,6 @@ public class Exams {
                 ", subject=" + subject +
                 ", date=" + date +
                 ", coefficient=" + coefficient +
-                ", notes=" + notes +
                 '}';
     }
 
@@ -39,12 +37,12 @@ public class Exams {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Exams exams = (Exams) o;
-        return id == exams.id && coefficient == exams.coefficient && Objects.equals(title, exams.title) && Objects.equals(subject, exams.subject) && Objects.equals(date, exams.date) && Objects.equals(notes, exams.notes);
+        return id == exams.id && coefficient == exams.coefficient && Objects.equals(title, exams.title) && Objects.equals(subject, exams.subject) && Objects.equals(date, exams.date));
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, subject, date, coefficient, notes);
+        return Objects.hash(id, title, subject, date, coefficient);
     }
 
 

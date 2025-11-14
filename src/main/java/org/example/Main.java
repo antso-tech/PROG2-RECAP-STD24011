@@ -50,6 +50,7 @@ public class Main {
         System.out.println(finalExamNoteProg1.getHistory());
         CalculatorFinalNote progFinalNotes = new CalculatorFinalNote();
         System.out.println(progFinalNotes.finalNoteCalculator(List.of(firstExamNotePROG1,firstTestNoteProg1,finalExamNoteProg1)));
+        Emily.getExamGrade(finalExamWeb1,Instant.parse("2025-10-30T08:00:00Z"));
 
     }
 }
