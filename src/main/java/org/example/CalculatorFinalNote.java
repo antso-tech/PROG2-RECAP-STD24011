@@ -1,9 +1,12 @@
 package org.example;
 
+import java.time.Instant;
 import java.util.List;
 
-public class Course {
+public class CalculatorFinalNote {
+
     public Double finalNoteCalculator(List<Note> notes){
+
         return notes
                 .stream()
                 .flatMapToDouble(n -> n
@@ -17,4 +20,7 @@ public class Course {
                 .boxed()
                 .reduce(0.0, Double::sum) / 5;
     }
+
+
+
 }

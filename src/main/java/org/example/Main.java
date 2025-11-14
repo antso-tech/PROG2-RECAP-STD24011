@@ -36,19 +36,23 @@ public class Main {
         Exams testProg1 = new Exams(2,"Test prog1", PROG1
                 ,Instant.parse("2025-10-30T08:00:00Z"),2);
         Exams finalExamProg1 = new Exams(3,"Examen final PROG1", PROG1
-                ,Instant.parse("2025-10-30T08:00:00Z"),2);
+                ,Instant.parse("2025-10-30T08:00:00Z"),3);
         Exams firstExamWeb1 = new Exams(4, "Premier examen WEB1", WEB1
                 ,Instant.parse("2025-10-30T08:00:00Z"), 2);
+        Exams finalExamWeb1 = new Exams(5,"Examen final WEB1",WEB1,Instant.parse("2025-11-14T02:45:19Z"),3);
         Note firstExamNotePROG1 = new Note(16.00, PROG1, Emily,finalExamProg1);
         Note firstTestNoteProg1 = new Note(14.00, PROG1, Jean, testProg1);
         Note firstExamNoteWeb1 = new Note(17.00, WEB1, Emily,firstExamWeb1);
         Note finalExamNoteProg1 = new Note(13.00, PROG1, Emily,finalExamProg1);
+        Note finaleExamNoteWeb1 = new Note(12.00,WEB1,Emily,finalExamWeb1);
         finalExamNoteProg1.changeNote(history1);
         System.out.println(finalExamNoteProg1.getHistory());
         finalExamNoteProg1.changeNote(history2);
         System.out.println(finalExamNoteProg1.getHistory());
-        Course progFinalNotes = new Course();
+        CalculatorFinalNote progFinalNotes = new CalculatorFinalNote();
+        CalculatorFinalNote webFinalNotes = new CalculatorFinalNote();
+        System.out.println(webFinalNotes.finalNoteCalculator(List.of(firstExamNoteWeb1,finaleExamNoteWeb1)));
         System.out.println(progFinalNotes.finalNoteCalculator(List.of(firstExamNotePROG1,firstTestNoteProg1,finalExamNoteProg1)));
-
+        System.out.println(finalExamProg1.getExamGrade(Emily,Instant.parse("2025-10-30T08:00:00Z")));
     }
 }

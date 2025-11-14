@@ -14,12 +14,14 @@ public class Exams {
     private final int coefficient;
     private List<Note> notes;
 
-    public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
+
+    public Exams(int id, String title, Subject subject, Instant date, int coefficient, List<Note> notes) {
         this.id = id;
         this.title = title;
         this.subject = subject;
         this.date = date;
         this.coefficient = coefficient;
+        this.notes = notes;
     }
 
     @Override
@@ -46,5 +48,10 @@ public class Exams {
         return Objects.hash(id, title, subject, date, coefficient, notes);
     }
 
+    public List<History> getExamGrade(Student student, Instant t){
+        return notes
+                .stream().map(e -> (History) e.getHistory().stream().map(History::getNote)).toList();
 
+
+    }
 }
