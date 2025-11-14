@@ -12,13 +12,16 @@ import java.util.List;
 public class Note {
     private final Double initialValue;
     private final Subject subject;
+    private final Student student;
+    private final Exams exams;
     private final List<History> history;
 
-    public Note(Double initialValue, Subject subject) {
+    public Note(Double initialValue, Subject subject, Student student, Exams exams) {
         this.initialValue = initialValue;
         this.subject = subject;
+        this.student = student;
         this.history = new ArrayList<>();
-
+        this.exams = exams;
         history.add(new History(initialValue,Instant.now(),"first note"));
     }
 
@@ -27,6 +30,8 @@ public class Note {
         return "Note{" +
                 "initialValue=" + initialValue +
                 ", subject=" + subject +
+                ", student=" + student +
+                ", exams=" + exams +
                 ", history=" + history +
                 '}';
     }

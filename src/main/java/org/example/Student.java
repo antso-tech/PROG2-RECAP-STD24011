@@ -40,7 +40,5 @@ public class Student extends People{
         return Objects.hash(super.hashCode(), group, tutor);
     }
 
-    public double getExamGrade(Exams exams, Instant t){
-        return
-    }
+
 }
