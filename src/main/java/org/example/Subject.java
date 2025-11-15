@@ -14,9 +14,9 @@ public class Subject {
     private final Label label;
     private final Integer credit;
     private final Teacher teacher;
-    private final List<Exams> exam;
+    private final List<Exam> exam;
 
-    public Subject(Integer id, Label label, Integer credit, Teacher teacher, List<Exams> exam) {
+    public Subject(Integer id, Label label, Integer credit, Teacher teacher, List<Exam> exam) {
         this.id = id;
         this.label = label;
         this.credit = credit;

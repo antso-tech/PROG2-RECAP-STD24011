@@ -2,19 +2,18 @@ package org.example;
 
 import lombok.Getter;
 import java.time.Instant;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 @Getter
-public class Exams {
+public class Exam {
     private final int id;
     private final String title;
     private final Instant date;
     private final int coefficient;
     private final List<Note> note;
 
-    public Exams(int id, String title, Instant date, int coefficient, List<Note> note) {
+    public Exam(int id, String title, Instant date, int coefficient, List<Note> note) {
         this.id = id;
         this.title = title;
         this.date = date;
@@ -35,7 +34,7 @@ public class Exams {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Exams exams = (Exams) o;
+        Exam exams = (Exam) o;
         return id == exams.id && coefficient == exams.coefficient && Objects.equals(title, exams.title) && Objects.equals(date, exams.date);
     }
 
@@ -55,7 +54,7 @@ public class Exams {
     }
 
     public double getCourseGrade(Subject subject, Student student, Instant t){
-        return 
+        return
 
     }
 
