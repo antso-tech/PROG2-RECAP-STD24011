@@ -13,8 +13,6 @@ public class Exams {
     private final int coefficient;
     private final List<Note> note;
 
-
-
     public Exams(int id, String title, Instant date, int coefficient, List<Note> note) {
         this.id = id;
         this.title = title;

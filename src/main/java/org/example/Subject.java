@@ -6,8 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.DoubleStream;
-import java.util.stream.Stream;
 
 
 @Getter
@@ -48,11 +46,21 @@ public class Subject {
         return Objects.hash(id, label, credit, teacher);
     }
 
-    public List<Stream<Stream<Double>>> finalNoteCalculator(){
-        return exam.stream().map(e -> e.getNote().stream().map(h -> h
-                .getHistory()
-                .stream()
-                .map(History::getNote)))
+    public double finalNoteCalculator(Student student){
+        var notesByStudents =    exam.stream()
+                .map(e -> e.getNote()
+                        .stream().filter(s -> s.getStudent() == student)
+                        .map(n  -> n.getHistory()
+                                .stream()
+                                .max(Comparator.comparing(History::getTime))
+                                .map(h -> h.getNote() * e.getCoefficient())).toList())
                 .toList();
-                }
+        return notesByStudents
+                .stream().
+                flatMap(List::stream)
+                .flatMap(Optional::stream)
+                .mapToDouble(Double::doubleValue)
+                .sum() / 5;
+
+    }
 }

@@ -63,7 +63,7 @@ public class Main {
         jeanNote2.changeNote(history2);
         System.out.println(jeanNote2.getHistory());
         CalculatorFinalNote progFinalNotes = new CalculatorFinalNote();
-        System.out.println(PROG1.finalNoteCalculator());
+        System.out.println(PROG1.finalNoteCalculator(Jean));
 
 
 
