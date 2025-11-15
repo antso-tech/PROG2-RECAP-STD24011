@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.Getter;
 import java.time.Instant;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,7 +42,23 @@ public class Exams {
     @Override
     public int hashCode() {
         return Objects.hash(id, title, date, coefficient);
+
     }
+
+    public List<Double> getExamGrade(Student student, Instant t){
+        return note
+                .stream()
+                .filter(note1 -> note1.getStudent() == student)
+                .flatMap(note2 -> note2.getHistory()
+                        .stream()
+                        .filter(e -> e.getTime().isBefore(t)).map(History::getNote)).toList();
+    }
+
+    public double getCourseGrade(Subject subject, Student student, Instant t){
+        return 
+
+    }
+
 
 
 }

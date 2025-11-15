@@ -64,8 +64,7 @@ public class Main {
         System.out.println(jeanNote2.getHistory());
         CalculatorFinalNote progFinalNotes = new CalculatorFinalNote();
         System.out.println(PROG1.finalNoteCalculator(Jean));
-
-
+        System.out.println(finalExamProg1.getExamGrade(Jean,Instant.parse("2025-11-15T17:40:19Z")));
 
     }
 }
