@@ -21,7 +21,8 @@ public class GradeTest {
     Exam exam2;
     Exam exam3;
     Exam exam4;
-    Subject subject;
+    Subject subject1;
+    Subject subject2;
     History history1;
     History history2;
     History history3;
@@ -74,7 +75,8 @@ public class GradeTest {
         exam4 = new Exam(4, "Premier examen WEB1"
                 ,Instant.parse("2025-05-27T08:00:00Z"), 2,List.of(note1,note5));
 
-        subject = new Subject(1,Label.PROG1,8,teacher1,List.of(exam1,exam2,exam3));
+        subject1 = new Subject(1,Label.PROG1,8,teacher1,List.of(exam1,exam2,exam3));
+        subject2 = new Subject(2,Label.WEB1,6,teacher2,List.of(exam4));
 
         history1 =  new History(13.00, Instant.parse("2025-11-15T07:45:19Z")
                 ,"devoir mal fini");
