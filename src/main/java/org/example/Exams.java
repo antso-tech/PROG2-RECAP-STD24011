@@ -9,17 +9,18 @@ import java.util.Objects;
 public class Exams {
     private final int id;
     private final String title;
-    private final Subject subject;
     private final Instant date;
     private final int coefficient;
+    private final List<Note> note;
 
 
-    public Exams(int id, String title, Subject subject, Instant date, int coefficient) {
+
+    public Exams(int id, String title, Instant date, int coefficient, List<Note> note) {
         this.id = id;
         this.title = title;
-        this.subject = subject;
         this.date = date;
         this.coefficient = coefficient;
+        this.note = note;
     }
 
     @Override
@@ -27,7 +28,6 @@ public class Exams {
         return "Exams{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", subject=" + subject +
                 ", date=" + date +
                 ", coefficient=" + coefficient +
                 '}';
@@ -37,12 +37,12 @@ public class Exams {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Exams exams = (Exams) o;
-        return id == exams.id && coefficient == exams.coefficient && Objects.equals(title, exams.title) && Objects.equals(subject, exams.subject) && Objects.equals(date, exams.date));
+        return id == exams.id && coefficient == exams.coefficient && Objects.equals(title, exams.title) && Objects.equals(date, exams.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, subject, date, coefficient);
+        return Objects.hash(id, title, date, coefficient);
     }
 
 
