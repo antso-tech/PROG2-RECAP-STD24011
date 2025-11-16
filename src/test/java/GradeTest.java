@@ -97,10 +97,10 @@ public class GradeTest {
     @Test
     void testfinalNoteCalculator(){
         var test = subject1.finalNoteCalculator(student1);
-        Assertions.assertEquals(19.9,test);
+        Assertions.assertEquals(14.0,test);
 
         var test2 = subject2.finalNoteCalculator(student2);
-        Assertions.assertEquals(4.4,test2);
+        Assertions.assertEquals(11.0,test2);
 
     }
 

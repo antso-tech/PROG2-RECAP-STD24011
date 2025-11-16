@@ -68,8 +68,9 @@ Student        student1 = new Student(1, "Bryar","Emily"
 
         System.out.println(note2.getHistory());
         System.out.println(note5.getHistory());
-        System.out.println();
+        System.out.println(note2);
         System.out.println(exam2.getExamGrade(student2,Instant.parse("2025-08-11T15:50:00Z")));
+        System.out.println(subject1.getCourseGrade(student1,Instant.parse("2025-07-12T18:00:00Z")));
     }
 }
 

@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.Getter;
 
+import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -46,8 +47,12 @@ public class Subject {
         return Objects.hash(id, label, credit, teacher);
     }
 
+    public int getTotalCoefficient(){
+        return exam.stream().map(Exam::getCoefficient).reduce(0, Integer::sum);
+    }
+
     public double finalNoteCalculator(Student student){
-        var notesByStudents =    exam.stream()
+        var notesByStudents = exam.stream()
                 .map(e -> e.getNote()
                         .stream().filter(s -> s.getStudent() == student)
                         .map(n  -> n.getHistory()
@@ -55,12 +60,26 @@ public class Subject {
                                 .max(Comparator.comparing(History::getTime))
                                 .map(h -> h.getNote() * e.getCoefficient())).toList())
                 .toList();
-        return notesByStudents
+        var sumOfnotes = notesByStudents
                 .stream().
                 flatMap(List::stream)
                 .flatMap(Optional::stream)
                 .mapToDouble(Double::doubleValue)
-                .sum() / 5;
+                .sum();
 
+        return Math.round(sumOfnotes / getTotalCoefficient());
+    }
+
+
+    public List<Double> getCourseGrade(Student student, Instant t){
+        return exam.stream()
+                .flatMap(e -> e.getNote()
+                        .stream()
+                        .filter(s -> s
+                                .getStudent()
+                                .equals(student))
+                        .flatMap(n -> n.getHistory().stream()
+                                .filter(h -> h.getTime().isBefore(t)).map(h -> h.getNote() * e.getCoefficient())))
+                .toList();
     }
 }

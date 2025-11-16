@@ -33,4 +33,6 @@ public class Teacher extends People{
     public int hashCode() {
         return Objects.hash(super.hashCode(), Speciality);
     }
+
+
 }
