@@ -65,21 +65,24 @@ public class Subject {
                 flatMap(List::stream)
                 .flatMap(Optional::stream)
                 .mapToDouble(Double::doubleValue)
-                .sum();
+                .sum() / getTotalCoefficient();
 
-        return Math.round(sumOfnotes / getTotalCoefficient());
+        return Math.round(sumOfnotes * 100.0) / 100.0;
     }
 
 
-    public List<Double> getCourseGrade(Student student, Instant t){
-        return exam.stream()
+    public Double getCourseGrade(Student student, Instant t){
+        var courseGrade = exam.stream()
                 .flatMap(e -> e.getNote()
                         .stream()
                         .filter(s -> s
                                 .getStudent()
                                 .equals(student))
                         .flatMap(n -> n.getHistory().stream()
-                                .filter(h -> h.getTime().isBefore(t)).map(h -> h.getNote() * e.getCoefficient())))
-                .toList();
+                                .filter(h -> h.getTime().isBefore(t))
+                                .map(h -> h.getNote() * e.getCoefficient())))
+                .reduce(0.0, Double::sum) / getTotalCoefficient();
+
+        return Math.round(courseGrade * 100.0) / 100.0;
     }
 }

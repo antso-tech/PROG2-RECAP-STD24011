@@ -97,7 +97,7 @@ public class GradeTest {
     @Test
     void testfinalNoteCalculator(){
         var test = subject1.finalNoteCalculator(student1);
-        Assertions.assertEquals(14.0,test);
+        Assertions.assertEquals(14.21,test);
 
         var test2 = subject2.finalNoteCalculator(student2);
         Assertions.assertEquals(11.0,test2);
@@ -115,6 +115,10 @@ public class GradeTest {
 
     @Test
     void testgetCourseGrade(){
+        var test1 = subject1.getCourseGrade(student2,Instant.parse("2025-07-12T15:00:00Z"));
+        Assertions.assertEquals(7.29,test1);
+
+
 
     }
 
