@@ -1,4 +1,6 @@
 import org.example.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.time.Instant;
@@ -78,20 +80,31 @@ public class GradeTest {
         subject1 = new Subject(1,Label.PROG1,8,teacher1,List.of(exam1,exam2,exam3));
         subject2 = new Subject(2,Label.WEB1,6,teacher2,List.of(exam4));
 
-        history1 =  new History(13.00, Instant.parse("2025-11-15T07:45:19Z")
+        history1 =  new History(13.00, Instant.now()
                 ,"devoir mal fini");
-        history2 = new History(15.00,Instant.parse("2025-11-15T17:40:19Z")
+        history2 = new History(15.00,Instant.now()
                 ,"bonus pour bonne conduite");
-        history3 = new History(14.00, Instant.parse("2025-11-16T15:15:20Z"),"réussite à un test");
-        history4 = new History(11.00, Instant.parse("2025-11-16T13:10:11Z"),"punition collectif due au bavardage");
+        history3 = new History(14.00, Instant.now(),"réussite à un test");
+        history4 = new History(11.00, Instant.now(),"punition collectif due au bavardage");
 
-        note2.changeNote(history2);
         note2.changeNote(history1);
+        note2.changeNote(history2);
 
         note5.changeNote(history4);
         note5.changeNote(history3);
 
     }
+
+    @Test
+    void testfinalNoteCalculator(){
+        var test = subject1.finalNoteCalculator(student1);
+        Assertions.assertEquals(19.9,test);
+
+        var test2 = subject2.finalNoteCalculator(student2);
+        Assertions.assertEquals(4.4,test2);
+
+    }
+
 
 
 }

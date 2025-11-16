@@ -36,5 +36,9 @@ public class Note {
 
     }
 
+    public List<History> getHistory(){
+        return new ArrayList<>(history);
+    }
+
 
 }

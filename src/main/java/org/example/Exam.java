@@ -50,14 +50,10 @@ public class Exam {
                 .filter(note1 -> note1.getStudent() == student)
                 .flatMap(note2 -> note2.getHistory()
                         .stream()
-                        .filter(e -> e.getTime().isBefore(t)).map(History::getNote)).toList();
+                        .filter(e -> e.getTime().isBefore(t))
+                        .map(History::getNote))
+                .toList();
     }
-
-    public double getCourseGrade(Subject subject, Student student, Instant t){
-        return
-
-    }
-
 
 
 }
