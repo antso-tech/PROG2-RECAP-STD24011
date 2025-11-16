@@ -44,7 +44,7 @@ public class Exam {
 
     }
 
-    public List<Double> getExamGrade(Student student, Instant t){
+    public Double getExamGrade(Student student, Instant t){
         return note
                 .stream()
                 .filter(note1 -> note1.getStudent() == student)
@@ -52,8 +52,10 @@ public class Exam {
                         .stream()
                         .filter(e -> e.getTime().isBefore(t))
                         .map(History::getNote))
-                .toList();
+                .toList().stream().reduce(0.0, Double::sum);
     }
+
+
 
 
 }
