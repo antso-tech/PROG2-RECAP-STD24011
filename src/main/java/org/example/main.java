@@ -71,7 +71,7 @@ public class main {
         System.out.println(note2);
         System.out.println(exam2.getExamGrade(student2,Instant.parse("2025-08-11T15:50:00Z")));
         System.out.println(subject2.getTotalCoefficient());
-        System.out.println();
+        System.out.println(subject2.getCourseGrade(student1,Instant.parse("2025-0_-15T18:00:00Z")));
         System.out.println(subject1.finalNoteCalculator(student1));
 
     }

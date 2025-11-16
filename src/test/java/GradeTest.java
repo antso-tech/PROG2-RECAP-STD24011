@@ -118,7 +118,8 @@ public class GradeTest {
         var test1 = subject1.getCourseGrade(student2,Instant.parse("2025-07-12T15:00:00Z"));
         Assertions.assertEquals(7.29,test1);
 
-
+        var test2 = subject2.getCourseGrade(student1,Instant.parse("2025-07-12T18:00:00Z"));
+        Assertions.assertEquals(13.5,test2);
 
     }
 

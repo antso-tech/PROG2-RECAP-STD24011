@@ -83,6 +83,6 @@ public class Subject {
                                 .map(h -> h.getNote() * e.getCoefficient())))
                 .reduce(0.0, Double::sum) / getTotalCoefficient();
 
-        return Math.round(courseGrade * 100.0) / 100.0;
+        return Math.round(courseGrade * 100.0) /100.0;
     }
 }
