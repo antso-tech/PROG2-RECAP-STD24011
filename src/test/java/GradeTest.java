@@ -114,7 +114,7 @@ public class GradeTest {
     }
 
     @Test
-    void testgetCourseGrade(){
+    void testGetCourseGrade(){
         var test1 = subject1.getCourseGrade(student2,Instant.parse("2025-07-12T15:00:00Z"));
         Assertions.assertEquals(7.29,test1);
 
