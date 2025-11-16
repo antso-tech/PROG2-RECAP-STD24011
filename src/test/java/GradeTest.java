@@ -85,9 +85,13 @@ public class GradeTest {
         history3 = new History(14.00, Instant.parse("2025-11-16T15:15:20Z"),"réussite à un test");
         history4 = new History(11.00, Instant.parse("2025-11-16T13:10:11Z"),"punition collectif due au bavardage");
 
+        note2.changeNote(history2);
+        note2.changeNote(history1);
 
-
-
+        note5.changeNote(history4);
+        note5.changeNote(history3);
 
     }
+
+
 }
