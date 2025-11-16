@@ -15,12 +15,12 @@ public class Note {
     private final List<History> history;
     private final Student student;
 
-    public Note(Double initialValue, Student student) {
+    public Note(Double initialValue,Instant initialTime, Student student) {
         this.initialValue = initialValue;
         this.student = student;
 
         this.history = new ArrayList<>();
-        history.add(new History(initialValue, Instant.now(), "first note"));
+        history.add(new History(initialValue,initialTime, "first note"));
     }
 
     @Override
