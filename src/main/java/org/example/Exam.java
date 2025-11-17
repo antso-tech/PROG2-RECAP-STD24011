@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.Getter;
 import java.time.Instant;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -49,10 +50,11 @@ public class Exam {
                 .stream()
                 .filter(note1 -> note1.getStudent() == student)
                 .flatMap(note2 -> note2.getHistory()
-                        .stream()
-                        .filter(e -> e.getTime().isBefore(t))
-                        .map(History::getNote))
-                .toList().stream().reduce(0.0, Double::sum);
+                        .stream())
+                        .filter(e -> e.getTime().isBefore(t) || e.getTime().equals(t))
+                        .max(Comparator.comparing(History::getTime))
+                        .map(History::getNote).orElse(0.0);
+
     }
 
 

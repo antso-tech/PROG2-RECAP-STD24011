@@ -106,20 +106,20 @@ public class GradeTest {
 
     @Test
     void testgetExamGrade(){
-        var test1 = exam1.getExamGrade(student1,Instant.parse("2025-08-11T16:05:00Z"));
-        Assertions.assertEquals(13.5, test1);
+        var test1 = exam3.getExamGrade(student1,Instant.parse("2025-07-12T18:00:00Z"));
+        Assertions.assertEquals(15.0, test1);
 
-        var test2 = exam2.getExamGrade(student2,Instant.parse("2025-08-11T15:50:00Z"));
-        Assertions.assertEquals(12.25,test2);
+        var test2 = exam2.getExamGrade(student2,Instant.parse("2025-08-11T16:50:00Z"));
+        Assertions.assertEquals(14.0,test2);
     }
 
     @Test
     void testGetCourseGrade(){
-        var test1 = subject1.getCourseGrade(student2,Instant.parse("2025-07-12T15:00:00Z"));
-        Assertions.assertEquals(7.29,test1);
+        var test1 = subject1.getCourseGrade(student1,Instant.parse("2025-07-12T17:00:00Z"));
+        Assertions.assertEquals(10.36,test1);
 
-        var test2 = subject2.getCourseGrade(student1,Instant.parse("2025-07-12T18:00:00Z"));
-        Assertions.assertEquals(13.5,test2);
+        var test2 = subject2.getCourseGrade(student2,Instant.parse("2025-08-11T17:00:00Z"));
+        Assertions.assertEquals(26.25,test2);
 
     }
 
